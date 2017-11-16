@@ -7,6 +7,7 @@ package HeroMaker;
 
 import java.io.Serializable;
 import java.util.Collection;
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -37,6 +38,13 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Level.findByIdClass", query = "SELECT l FROM Level l WHERE l.levelPK.idClass = :idClass")
     , @NamedQuery(name = "Level.findById", query = "SELECT l FROM Level l WHERE l.levelPK.id = :id")})
 public class Level implements Serializable {
+
+    @Basic(optional = false)
+    @Column(name = "HEALTH")
+    private int health;
+    @Basic(optional = false)
+    @Column(name = "RESSOURCE")
+    private int ressource;
 
     private static final long serialVersionUID = 1L;
     @EmbeddedId
@@ -161,6 +169,22 @@ public class Level implements Serializable {
     @Override
     public String toString() {
         return "HeroMaker.Level[ levelPK=" + levelPK + " ]";
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public int getRessource() {
+        return ressource;
+    }
+
+    public void setRessource(int ressource) {
+        this.ressource = ressource;
     }
     
 }

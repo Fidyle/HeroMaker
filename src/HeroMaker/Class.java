@@ -32,6 +32,10 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Class.findByName", query = "SELECT c FROM Class c WHERE c.name = :name")})
 public class Class implements Serializable {
 
+    @Basic(optional = false)
+    @Column(name = "RESSOURCE_NAME")
+    private String ressourceName;
+
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -97,6 +101,14 @@ public class Class implements Serializable {
     @Override
     public String toString() {
         return "HeroMaker.Class[ id=" + id + " ]";
+    }
+
+    public String getRessourceName() {
+        return ressourceName;
+    }
+
+    public void setRessourceName(String ressourceName) {
+        this.ressourceName = ressourceName;
     }
     
 }

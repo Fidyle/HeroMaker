@@ -1,14 +1,15 @@
 package HeroMaker;
 
 
-import java.util.Arrays;
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 
 /*
@@ -32,6 +33,17 @@ public class MainHeroMaker extends javax.swing.JFrame {
     public MainHeroMaker() {
         initComponents();
         actualPanel = jPanelHeroList;
+        
+        //Search of db location
+        String dbPath = null;
+        try {
+            dbPath = new File(".").getCanonicalPath();
+            dbPath += "\\database\\";
+            System.setProperty("derby.system.home", dbPath);
+        } catch (IOException ex) {
+            Logger.getLogger(MainHeroMaker.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         connectDatabase();
         updateHeroTable();
         

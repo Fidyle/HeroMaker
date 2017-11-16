@@ -8,7 +8,7 @@
     <class>HeroMaker.Race</class>
     <class>HeroMaker.Class</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:derby:F:\Documents\NetBeansProjects\HeroMaker\database\dbHeroMaker"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:derby:dbHeroMaker"/>
       <property name="javax.persistence.jdbc.user" value="adminHeroMaker"/>
       <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
       <property name="javax.persistence.jdbc.password" value="password"/>

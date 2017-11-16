@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 
@@ -27,8 +28,10 @@ public class MainHeroMaker extends javax.swing.JFrame {
      */
     EntityManagerFactory emf = null;
     EntityManager em = null;
+    JPanel actualPanel;
     public MainHeroMaker() {
         initComponents();
+        actualPanel = jPanelHeroList;
         connectDatabase();
         updateHeroTable();
         
@@ -43,12 +46,16 @@ public class MainHeroMaker extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextFieldSearch = new javax.swing.JTextField();
-        jLabelTableTitle = new javax.swing.JLabel();
-        jLabelSearchTitle = new javax.swing.JLabel();
-        jButtonSearch = new javax.swing.JButton();
+        jPanelMain = new javax.swing.JPanel();
+        jPanelHeroList = new javax.swing.JPanel();
         jScrollPaneTableHeroList = new javax.swing.JScrollPane();
         jTableHeroList = new javax.swing.JTable();
+        jButtonSearch = new javax.swing.JButton();
+        jTextFieldSearch = new javax.swing.JTextField();
+        jLabelSearchTitle = new javax.swing.JLabel();
+        jLabelTableTitle = new javax.swing.JLabel();
+        jPanelNew = new javax.swing.JPanel();
+        jButtonPanelNewReturn = new javax.swing.JButton();
         jMenuTop = new javax.swing.JMenuBar();
         jMenuFile = new javax.swing.JMenu();
         jMenuFileNew = new javax.swing.JMenuItem();
@@ -62,14 +69,7 @@ public class MainHeroMaker extends javax.swing.JFrame {
         setResizable(false);
         setSize(new java.awt.Dimension(500, 350));
 
-        jTextFieldSearch.setToolTipText("hero name");
-
-        jLabelTableTitle.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabelTableTitle.setText("List of local Heroes");
-
-        jLabelSearchTitle.setText("Search by name");
-
-        jButtonSearch.setText("Search");
+        jPanelMain.setLayout(new java.awt.CardLayout());
 
         jTableHeroList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -96,9 +96,86 @@ public class MainHeroMaker extends javax.swing.JFrame {
         });
         jScrollPaneTableHeroList.setViewportView(jTableHeroList);
 
+        jButtonSearch.setText("Search");
+
+        jTextFieldSearch.setToolTipText("hero name");
+
+        jLabelSearchTitle.setText("Search by name");
+
+        jLabelTableTitle.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelTableTitle.setText("List of local Heroes");
+
+        javax.swing.GroupLayout jPanelHeroListLayout = new javax.swing.GroupLayout(jPanelHeroList);
+        jPanelHeroList.setLayout(jPanelHeroListLayout);
+        jPanelHeroListLayout.setHorizontalGroup(
+            jPanelHeroListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelHeroListLayout.createSequentialGroup()
+                .addContainerGap(56, Short.MAX_VALUE)
+                .addGroup(jPanelHeroListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanelHeroListLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabelSearchTitle)
+                        .addGap(32, 32, 32)
+                        .addComponent(jTextFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonSearch, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE))
+                    .addComponent(jLabelTableTitle)
+                    .addComponent(jScrollPaneTableHeroList, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(50, 50, 50))
+        );
+        jPanelHeroListLayout.setVerticalGroup(
+            jPanelHeroListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelHeroListLayout.createSequentialGroup()
+                .addContainerGap(50, Short.MAX_VALUE)
+                .addComponent(jLabelTableTitle)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanelHeroListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelSearchTitle)
+                    .addComponent(jTextFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonSearch))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPaneTableHeroList, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(101, 101, 101))
+        );
+
+        jPanelMain.add(jPanelHeroList, "card2");
+
+        jPanelNew.setMinimumSize(jPanelMain.getMinimumSize());
+
+        jButtonPanelNewReturn.setText("Return");
+        jButtonPanelNewReturn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPanelNewReturnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanelNewLayout = new javax.swing.GroupLayout(jPanelNew);
+        jPanelNew.setLayout(jPanelNewLayout);
+        jPanelNewLayout.setHorizontalGroup(
+            jPanelNewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelNewLayout.createSequentialGroup()
+                .addContainerGap(380, Short.MAX_VALUE)
+                .addComponent(jButtonPanelNewReturn)
+                .addGap(35, 35, 35))
+        );
+        jPanelNewLayout.setVerticalGroup(
+            jPanelNewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelNewLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jButtonPanelNewReturn)
+                .addContainerGap(315, Short.MAX_VALUE))
+        );
+
+        jPanelMain.add(jPanelNew, "card3");
+
         jMenuFile.setText("File");
 
         jMenuFileNew.setText("New Hero");
+        jMenuFileNew.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuFileNewActionPerformed(evt);
+            }
+        });
         jMenuFile.add(jMenuFileNew);
         jMenuFile.add(jMenuFileSeparator);
 
@@ -124,33 +201,17 @@ public class MainHeroMaker extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(66, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jScrollPaneTableHeroList, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabelTableTitle)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabelSearchTitle)
-                            .addGap(38, 38, 38)
-                            .addComponent(jTextFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jButtonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(64, 64, 64))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanelMain, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(91, Short.MAX_VALUE)
-                .addComponent(jLabelTableTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelSearchTitle)
-                    .addComponent(jButtonSearch))
-                .addGap(10, 10, 10)
-                .addComponent(jScrollPaneTableHeroList, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanelMain, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -172,6 +233,21 @@ public class MainHeroMaker extends javax.swing.JFrame {
             System.out.println("okay");
         }
     }//GEN-LAST:event_jTableHeroListMouseClicked
+
+    private void jMenuFileNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuFileNewActionPerformed
+        // TODO add your handling code here:
+        actualPanel.setVisible(false);
+        actualPanel = jPanelNew;
+        actualPanel.setVisible(true);
+        
+    }//GEN-LAST:event_jMenuFileNewActionPerformed
+
+    private void jButtonPanelNewReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPanelNewReturnActionPerformed
+        // TODO add your handling code here:
+        actualPanel.setVisible(false);
+        actualPanel = jPanelHeroList;
+        actualPanel.setVisible(true);
+    }//GEN-LAST:event_jButtonPanelNewReturnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -255,6 +331,7 @@ public class MainHeroMaker extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonPanelNewReturn;
     private javax.swing.JButton jButtonSearch;
     private javax.swing.JLabel jLabelSearchTitle;
     private javax.swing.JLabel jLabelTableTitle;
@@ -265,6 +342,9 @@ public class MainHeroMaker extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jMenuFileSeparator;
     private javax.swing.JMenu jMenuHelp;
     private javax.swing.JMenuBar jMenuTop;
+    private javax.swing.JPanel jPanelHeroList;
+    private javax.swing.JPanel jPanelMain;
+    private javax.swing.JPanel jPanelNew;
     private javax.swing.JScrollPane jScrollPaneTableHeroList;
     private javax.swing.JTable jTableHeroList;
     private javax.swing.JTextField jTextFieldSearch;

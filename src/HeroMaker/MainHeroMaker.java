@@ -1,3 +1,5 @@
+package HeroMaker;
+
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -51,9 +53,7 @@ public class MainHeroMaker extends javax.swing.JFrame {
         jMenuHelp = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(500, 350));
         setMinimumSize(new java.awt.Dimension(500, 350));
-        setPreferredSize(new java.awt.Dimension(500, 350));
         setResizable(false);
         setSize(new java.awt.Dimension(500, 350));
 

@@ -1,4 +1,4 @@
-Thu Nov 16 18:42:36 CET 2017 Thread[AWT-EventQueue-0,6,main] Cleanup action starting
+Thu Nov 16 19:31:29 CET 2017 Thread[AWT-EventQueue-0,6,main] Cleanup action starting
 java.sql.SQLException: Base de données 'dbHeroMaker' introuvable.
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
@@ -27,8 +27,8 @@ java.sql.SQLException: Base de données 'dbHeroMaker' introuvable.
 	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
 	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
 	at HeroMaker.MainHeroMaker.connectDatabase(MainHeroMaker.java:300)
-	at HeroMaker.MainHeroMaker.<init>(MainHeroMaker.java:47)
-	at HeroMaker.MainHeroMaker$6.run(MainHeroMaker.java:294)
+	at HeroMaker.MainHeroMaker.<init>(MainHeroMaker.java:44)
+	at HeroMaker.MainHeroMaker$6.run(MainHeroMaker.java:293)
 	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
 	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:756)
 	at java.awt.EventQueue.access$500(EventQueue.java:97)
@@ -78,8 +78,8 @@ ERROR XJ004: Base de données 'dbHeroMaker' introuvable.
 	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
 	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
 	at HeroMaker.MainHeroMaker.connectDatabase(MainHeroMaker.java:300)
-	at HeroMaker.MainHeroMaker.<init>(MainHeroMaker.java:47)
-	at HeroMaker.MainHeroMaker$6.run(MainHeroMaker.java:294)
+	at HeroMaker.MainHeroMaker.<init>(MainHeroMaker.java:44)
+	at HeroMaker.MainHeroMaker$6.run(MainHeroMaker.java:293)
 	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
 	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:756)
 	at java.awt.EventQueue.access$500(EventQueue.java:97)
@@ -96,7 +96,7 @@ ERROR XJ004: Base de données 'dbHeroMaker' introuvable.
 	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
 ============= end nested exception, level (1) ===========
 Cleanup action completed
-Thu Nov 16 18:42:36 CET 2017 Thread[AWT-EventQueue-0,6,main] Cleanup action starting
+Thu Nov 16 19:31:29 CET 2017 Thread[AWT-EventQueue-0,6,main] Cleanup action starting
 java.sql.SQLException: Base de données 'dbHeroMaker' introuvable.
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
@@ -124,8 +124,8 @@ java.sql.SQLException: Base de données 'dbHeroMaker' introuvable.
 	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
 	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
 	at HeroMaker.MainHeroMaker.connectDatabase(MainHeroMaker.java:300)
-	at HeroMaker.MainHeroMaker.<init>(MainHeroMaker.java:47)
-	at HeroMaker.MainHeroMaker$6.run(MainHeroMaker.java:294)
+	at HeroMaker.MainHeroMaker.<init>(MainHeroMaker.java:44)
+	at HeroMaker.MainHeroMaker$6.run(MainHeroMaker.java:293)
 	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
 	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:756)
 	at java.awt.EventQueue.access$500(EventQueue.java:97)
@@ -174,8 +174,8 @@ ERROR XJ004: Base de données 'dbHeroMaker' introuvable.
 	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
 	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
 	at HeroMaker.MainHeroMaker.connectDatabase(MainHeroMaker.java:300)
-	at HeroMaker.MainHeroMaker.<init>(MainHeroMaker.java:47)
-	at HeroMaker.MainHeroMaker$6.run(MainHeroMaker.java:294)
+	at HeroMaker.MainHeroMaker.<init>(MainHeroMaker.java:44)
+	at HeroMaker.MainHeroMaker$6.run(MainHeroMaker.java:293)
 	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
 	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:756)
 	at java.awt.EventQueue.access$500(EventQueue.java:97)

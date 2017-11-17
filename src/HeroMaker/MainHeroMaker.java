@@ -39,14 +39,13 @@ public class MainHeroMaker extends javax.swing.JFrame {
         try {
             dbPath = new File(".").getCanonicalPath();
             dbPath += "\\database\\";
+            System.out.println(dbPath);
             System.setProperty("derby.system.home", dbPath);
+            connectDatabase();
+            updateHeroTable();
         } catch (IOException ex) {
             Logger.getLogger(MainHeroMaker.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        connectDatabase();
-        updateHeroTable();
-        
     }
 
     /**
@@ -77,6 +76,7 @@ public class MainHeroMaker extends javax.swing.JFrame {
         jMenuHelp = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("HeroMaker");
         setMinimumSize(new java.awt.Dimension(500, 350));
         setResizable(false);
         setSize(new java.awt.Dimension(500, 350));
@@ -297,7 +297,12 @@ public class MainHeroMaker extends javax.swing.JFrame {
     }
     public void connectDatabase(){
         if(emf == null){
-            emf = javax.persistence.Persistence.createEntityManagerFactory("HeroMakerPU");
+            try {
+                emf = javax.persistence.Persistence.createEntityManagerFactory("HeroMakerPU");
+            } catch(Exception e){
+                JOptionPane.showMessageDialog(this, "Can't reach local database, the application will close", "Error",JOptionPane.ERROR_MESSAGE);
+                System.exit(0);
+            }
         }
         if(em == null){
             em = emf.createEntityManager();
